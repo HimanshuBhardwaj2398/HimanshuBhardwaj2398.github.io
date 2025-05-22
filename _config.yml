@@ -1,0 +1,43 @@
+# Site settings
+title: Himanshu Bhardwaj
+email: himanshubhardwaj2398@gmail.com
+description: >-
+  Data Scientist | LLM Applications, RAG Systems, Machine Learning, Deep Learning, NLP. 
+  Passionate about leveraging data to build innovative AI solutions.
+baseurl: "" # Keep this empty for user pages (username.github.io)
+url: "https://YOUR_GH_USERNAME.github.io" # IMPORTANT: User needs to replace YOUR_GH_USERNAME
+
+# User social links
+github_username:  YOUR_GH_USERNAME # IMPORTANT: User needs to replace YOUR_GH_USERNAME
+linkedin_username: himanshu-bhardwaj-80a087118 # From user's LinkedIn URL
+
+# Theme settings
+theme: jekyll-theme-lanyon # Tells GitHub Pages to use the Lanyon theme
+
+# Lanyon specific settings (can be customized further later)
+# See Lanyon documentation for more options: https://github.com/poole/lanyon
+# Example:
+# lanyon:
+#   accent_color: '#custom_hex_color_code' # Default is blue
+#   sidebar_sticky: true # Default is true
+#   theme_style: "" # or "reverse" for dark sidebar, light content (default)
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag # For better SEO
+  # - jekyll-gist # If user plans to embed Gists
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal list of excluded items for the build.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
