@@ -12,7 +12,8 @@ github_username:  himanshubhardwaj2398
 linkedin_username: himanshu-bhardwaj-80a087118 
 
 # Theme settings
-theme: jekyll-theme-lanyon # Tells GitHub Pages to use the Lanyon theme
+# theme: jekyll-theme-lanyon # Tells GitHub Pages to use the Lanyon theme
+remote_theme: poole/lanyon
 
 # Lanyon specific settings (can be customized further later)
 # See Lanyon documentation for more options: https://github.com/poole/lanyon
