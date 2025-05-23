@@ -1,0 +1,254 @@
+:root {
+    --primary-bg-color: #ffffff; /* Light background for content */
+    --secondary-bg-color: #f8f9fa; /* Slightly off-white for accents */
+    --sidebar-bg-color: #2c3e50; /* Dark sidebar */
+    --sidebar-text-color: #ecf0f1;
+    --sidebar-accent-color: #3498db; /* Accent for links/hover */
+    --text-color: #34495e;
+    --heading-font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --body-font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --sidebar-width: 280px;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    background-color: var(--primary-bg-color);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.site-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-content-area {
+    flex-grow: 1;
+    padding: 20px;
+    /* Add transition for when sidebar toggles, if we implement that */
+    /* transition: margin-left 0.3s ease; */
+}
+
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--sidebar-bg-color);
+    color: var(--sidebar-text-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header .site-title a {
+    color: var(--sidebar-text-color);
+    text-decoration: none;
+    font-family: var(--heading-font);
+    font-size: 1.8em;
+}
+
+.sidebar-header .site-tagline {
+    font-size: 0.9em;
+    margin-top: 5px;
+    color: #bdc3c7; /* Lighter than main sidebar text */
+}
+
+.sidebar-nav {
+    margin-top: 20px;
+    flex-grow: 1; /* Pushes footer down */
+}
+
+.sidebar-nav .nav-item {
+    display: block;
+    padding: 10px 0;
+    color: var(--sidebar-text-color);
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-nav .nav-item:hover,
+.sidebar-nav .nav-item.active {
+    color: var(--sidebar-accent-color);
+    /* background-color: rgba(255,255,255,0.05); */ /* Subtle hover */
+}
+
+.sidebar-footer {
+    margin-top: auto; /* Pushes to the bottom if sidebar is flex column */
+    padding-top: 20px;
+    border-top: 1px solid #4a627a; /* Separator */
+    text-align: center;
+}
+
+.sidebar-footer .social-icon {
+    display: inline-block;
+    margin: 0 5px;
+    color: var(--sidebar-text-color);
+    text-decoration: none;
+    font-size: 1.2em; /* Adjust if using actual icons */
+    padding: 5px;
+}
+
+.sidebar-footer .social-icon:hover {
+    color: var(--sidebar-accent-color);
+}
+
+.sidebar-toggle {
+    display: none; /* Hidden by default, shown via media query for mobile */
+    background: none;
+    border: 1px solid var(--sidebar-text-color);
+    color: var(--sidebar-text-color);
+    padding: 5px 8px;
+    cursor: pointer;
+    /* Basic hamburger bars */
+}
+
+.sidebar-toggle .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--sidebar-text-color);
+    margin: 4px 0;
+}
+
+/* We'll add media queries later to show this and hide sidebar on mobile */
+
+.main-content-area h1, .main-content-area h2, .main-content-area h3 {
+    font-family: var(--heading-font);
+    color: #2c3e50; /* Darker than body text */
+}
+
+.main-content-area a {
+    color: var(--sidebar-accent-color);
+    text-decoration: none;
+}
+
+.main-content-area a:hover {
+    text-decoration: underline;
+}
+
+/* Homepage Specific Styles */
+.hero-section {
+    padding: 3em 1em;
+    text-align: center;
+    background-color: var(--secondary-bg-color); /* Light background for emphasis */
+    border-radius: 8px;
+    margin-bottom: 2em;
+}
+
+.hero-section h1 {
+    font-size: 2.5em; /* Slightly smaller than example to fit typical content areas */
+    color: var(--text-color);
+    margin-bottom: 0.4em;
+}
+
+.hero-section .tagline {
+    font-size: 1.3em;
+    color: #555;
+    margin-bottom: 1em;
+}
+
+.hero-section .intro {
+    font-size: 1.1em;
+    max-width: 650px;
+    margin: 0 auto 1.5em auto;
+    line-height: 1.7;
+}
+
+.hero-buttons .btn {
+    display: inline-block;
+    padding: 0.7em 1.3em;
+    margin: 0.5em;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    border: 1px solid transparent; /* Base border */
+}
+
+.hero-buttons .btn-primary {
+    background-color: var(--sidebar-accent-color);
+    color: #fff;
+    border-color: var(--sidebar-accent-color);
+}
+
+.hero-buttons .btn-primary:hover {
+    background-color: #2980b9; /* Darken accent color */
+    border-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.hero-buttons .btn-secondary {
+    background-color: transparent;
+    color: var(--sidebar-accent-color);
+    border: 1px solid var(--sidebar-accent-color);
+}
+
+.hero-buttons .btn-secondary:hover {
+    background-color: var(--sidebar-accent-color);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background-color: #e0e0e0; /* Light divider */
+    margin: 2em 0;
+}
+
+.home-section {
+    padding: 1em 0;
+}
+
+.home-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 0.8em;
+    border-bottom: 2px solid var(--sidebar-accent-color); /* Accent under section titles */
+    padding-bottom: 0.3em;
+    display: inline-block; /* So border only spans text width */
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills-list li {
+    background-color: var(--secondary-bg-color);
+    padding: 8px 15px;
+    border-radius: 20px; /* Pill shape */
+    font-size: 0.95em;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.contact-prompt {
+    text-align: center;
+    padding: 1.5em;
+    background-color: var(--secondary-bg-color);
+    border-radius: 8px;
+}
+
+.contact-prompt h2 {
+    border-bottom: none; /* Remove border for this specific h2 */
+    display: block; /* Reset display for centering */
+}
+
+/* Ensure main content area is not too constrained by default container styling if any */
+.main-content-area #main.container {
+    max-width: 100%; /* Allow hero to use more space if needed */
+    padding: 0; /* Reset padding if .container adds its own */
+}
+/* If .container inside #main is still too restrictive, consider applying styles directly to #main or a specific homepage wrapper */
+
+/* Styling for avatar in sidebar (if not already handled by Jekyll Now theme CSS) */
+.sidebar-header .avatar {
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    border-radius: 50%; /* Circular avatar */
+    margin: 0 auto 15px auto; /* Center and add space below */
+    display: block;
+    object-fit: cover; /* Ensures image covers the area without distortion */
+}

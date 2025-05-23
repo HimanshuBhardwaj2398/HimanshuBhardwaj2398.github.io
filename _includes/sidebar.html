@@ -1,0 +1,45 @@
+<div class="sidebar">
+    <div class="sidebar-header">
+        <h1 class="site-title">
+            <a href="{{ site.baseurl | default: '/' }}">{{ site.name | default: site.title }}</a>
+        </h1>
+        <p class="site-tagline">{{ site.description }}</p>
+        <!-- Placeholder for a navigation toggle button (hamburger icon) -->
+        <!-- We'll style this and potentially add JS for it later -->
+        <button class="sidebar-toggle" type="button" aria-label="Toggle Navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+
+    <nav class="sidebar-nav">
+        {% for nav_item in site.navigation %}
+            <a class="nav-item{% if page.url == nav_item.url %} active{% endif %}" href="{{ nav_item.url | relative_url }}">
+                {{ nav_item.title }}
+            </a>
+        {% endfor %}
+    </nav>
+
+    <div class="sidebar-footer">
+        {% if site.github_username %}
+            <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <!-- Placeholder for GitHub icon -->
+                <span class="social-icon">GH</span> 
+            </a>
+        {% endif %}
+        {% if site.linkedin_username %}
+            <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <!-- Placeholder for LinkedIn icon -->
+                <span class="social-icon">LI</span>
+            </a>
+        {% endif %}
+        {% if site.email %}
+            <a href="mailto:{{ site.email }}" aria-label="Email">
+                <!-- Placeholder for Email icon -->
+                <span class="social-icon">EM</span>
+            </a>
+        {% endif %}
+        <!-- Add other social links from _config.yml if desired -->
+    </div>
+</div>
