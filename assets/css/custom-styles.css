@@ -1,0 +1,66 @@
+/* Import Google Fonts - Lora for headings, Open Sans for body */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333333; /* Dark gray for body text */
+    background-color: #F8F9FA; /* Light gray background */
+    line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', serif; /* Switched to a serif for headings for a more classic but professional feel */
+    color: #2c3e50; /* Darker, slightly desaturated blue/slate for headings */
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+a {
+    color: #007bff; /* Professional blue for links */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3; /* Darker blue for hover */
+    text-decoration: underline;
+}
+
+/* Style for sections - adjust as needed based on theme's existing classes */
+.site-section { /* Assuming 'oneflow-jekyll-theme' uses a class like this or we can target 'section' tags */
+    padding: 40px 20px;
+}
+
+/* Basic button styling - theme might have its own, this is a fallback/override */
+.button, button, input[type="submit"], input[type="button"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover, button:hover, input[type="submit"]:hover, input[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+/* You might need to inspect the theme's actual classes for sections, navigation, etc.,
+   and add more specific overrides if these general ones are not enough.
+   For example, targeting navigation links:
+   .navigation-list .nav-item a { ... }
+   Or specific section backgrounds if needed:
+   #about { background-color: #FFFFFF; }
+*/
+
+#tsparticles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Ensure it's in the background */
+}
