@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+    {% include meta.html %}
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="{{ '/assets/css/style.css' | relative_url }}" /> 
+    <!-- Changed from site.baseurl /style.css to a more robust path for custom CSS -->
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ '/feed.xml' | relative_url }}" />
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+    <!-- Custom styles will be added via custom.css, linked above or imported in style.css -->
+</head>
+<body>
+    <div class="site-container"> <!-- New wrapper for sidebar + content -->
+        {% include sidebar.html %}
+
+        <div class="main-content-area"> <!-- New wrapper for main content -->
+            <!-- The original Jekyll Now masthead is removed as its functionality (title, nav) is now in the sidebar -->
+            <!-- We might want a small header inside main-content-area for page titles or breadcrumbs later -->
+
+            <div id="main" role="main" class="container">
+                {{ content }}
+            </div>
+
+            <div class="wrapper-footer">
+                <div class="container">
+                    <footer class="footer">
+                        {% include svg-icons.html %} <!-- This is a Jekyll Now include, assumes it has social icons etc. -->
+                                                   <!-- We can replace or augment this with our own footer content if needed. -->
+                        <p>&copy; {{ site.time | date: '%Y' }} {{ site.name }}. All rights reserved.</p>
+                    </footer>
+                </div>
+            </div>
+        </div> <!-- End main-content-area -->
+    </div> <!-- End site-container -->
+    {% include analytics.html %}
+</body>
+</html>
