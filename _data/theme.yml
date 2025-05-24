@@ -1,0 +1,10 @@
+# _data/theme.yml
+# This file can be used to configure theme skins.
+# The JavaScript mode toggler will override this dynamically.
+skin: default # Default skin to load initially before JS kicks in.
+
+navigation_pages:
+  - index.html
+  - pages/about.md
+  - pages/projects.md
+  - blog.md
