@@ -1,6 +1,6 @@
 ---
-layout: page
+layout: default
 title: Projects
 ---
 
-This is the projects page. Content will be added later.
+Details of my projects will be listed here soon.

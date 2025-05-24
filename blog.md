@@ -1,9 +1,7 @@
 ---
-layout: default # Or 'page' if Jekyll Now uses that for standard pages
+layout: default
 title: Blog
 permalink: /blog/
 ---
 
-## Blog
-
-Welcome to my blog! Posts will appear here soon.
+Blog posts will appear here.

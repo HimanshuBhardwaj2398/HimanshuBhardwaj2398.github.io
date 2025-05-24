@@ -17,12 +17,12 @@ linkedin_username: himanshu-bhardwaj-80a087118 # From user's LinkedIn URL
 navigation:
   - title: Home
     url: /
-  - title: About
-    url: /about/
   - title: Projects
     url: /projects/
   - title: Blog
     url: /blog/
+  - title: CV
+    url: /cv/
 
 # Theme settings
 remote_theme: mmistakes/jekyll-theme-basically-basic
