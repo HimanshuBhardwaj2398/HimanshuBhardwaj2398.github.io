@@ -1,0 +1,22 @@
+---
+# This is a local override for Kross theme's home.html
+# It might be very different from the actual Kross home.html
+# We're doing this to inject the tsparticles div and script.
+layout: default # Assuming Kross has a 'default' layout this can inherit from
+---
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<head>
+    {% include head.html %} {# Assumes Kross has a head.html to populate initial head contents (like charset, viewport, title) #}
+    <link rel="stylesheet" href="{{ '/assets/css/custom-styles.css' | relative_url }}"> {# My custom styles #}
+</head>
+<body>
+  <div id="tsparticles"></div> {# Div for particles #}
+  {% include header.html %} {# Assumes Kross has a header.html #}
+  <main>
+    {{ content }}
+  </main>
+  {% include footer.html %} {# Assumes Kross has a footer.html #}
+  {% include custom-footer-scripts.html %} {# Our custom scripts #}
+</body>
+</html>

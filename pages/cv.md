@@ -1,5 +1,6 @@
----
-layout: default
+
+layout: page
+
 title: CV
 ---
 <section id="skills">
