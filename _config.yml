@@ -40,6 +40,7 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag # For better SEO
+  - jekyll-remote-theme
   # - jekyll-gist # If user plans to embed Gists
 
 # Exclude from processing.
