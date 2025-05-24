@@ -9,9 +9,17 @@ baseurl: "" # Keep this empty for user pages (username.github.io)
 url: "https://YOUR_GH_USERNAME.github.io" # IMPORTANT: User needs to replace YOUR_GH_USERNAME
 avatar: /assets/images/profile.jpg
 
-# User social links (Jekyll Now might have its own way to display these, but keep data)
-github_username:  YOUR_GH_USERNAME # IMPORTANT: User needs to replace YOUR_GH_USERNAME
-linkedin_username: himanshu-bhardwaj-80a087118 # From user's LinkedIn URL
+# Social Links (adapted for Kross theme expectations)
+social:
+  - name: "GitHub"
+    icon: "fab fa-github" # Placeholder icon class
+    link: "https://github.com/YOUR_GH_USERNAME" # IMPORTANT: User needs to replace YOUR_GH_USERNAME
+  - name: "LinkedIn"
+    icon: "fab fa-linkedin" # Placeholder icon class
+    link: "https://www.linkedin.com/in/himanshu-bhardwaj-80a087118"
+  - name: "Email"
+    icon: "fas fa-envelope" # Placeholder icon class
+    link: "mailto:himanshubhardwaj2398@gmail.com"
 
 # Navigation (used by some themes to build navigation menus)
 navigation:
@@ -25,7 +33,7 @@ navigation:
     url: /cv/
 
 # Theme settings
-remote_theme: mmistakes/jekyll-theme-basically-basic
+remote_theme: themefisher/kross-jekyll
 
 # Build settings
 markdown: kramdown

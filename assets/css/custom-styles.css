@@ -1,61 +1,6 @@
 /* Import Google Fonts - Lora for headings, Open Sans for body */
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
 
-body {
-    font-family: 'Open Sans', sans-serif;
-    color: #333333; /* Dark gray for body text */
-    background-color: #F8F9FA; /* Light gray background */
-    line-height: 1.7;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Lora', serif; /* Switched to a serif for headings for a more classic but professional feel */
-    color: #2c3e50; /* Darker, slightly desaturated blue/slate for headings */
-    margin-top: 1.5em;
-    margin-bottom: 0.8em;
-}
-
-a {
-    color: #007bff; /* Professional blue for links */
-    text-decoration: none;
-}
-
-a:hover {
-    color: #0056b3; /* Darker blue for hover */
-    text-decoration: underline;
-}
-
-/* Style for sections - adjust as needed based on theme's existing classes */
-.site-section { /* Assuming 'oneflow-jekyll-theme' uses a class like this or we can target 'section' tags */
-    padding: 40px 20px;
-}
-
-/* Basic button styling - theme might have its own, this is a fallback/override */
-.button, button, input[type="submit"], input[type="button"] {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.button:hover, button:hover, input[type="submit"]:hover, input[type="button"]:hover {
-    background-color: #0056b3;
-}
-
-/* You might need to inspect the theme's actual classes for sections, navigation, etc.,
-   and add more specific overrides if these general ones are not enough.
-   For example, targeting navigation links:
-   .navigation-list .nav-item a { ... }
-   Or specific section backgrounds if needed:
-   #about { background-color: #FFFFFF; }
-*/
-
 #tsparticles {
   position: fixed;
   width: 100%;
@@ -65,27 +10,61 @@ a:hover {
   z-index: -1; /* Ensure it's in the background */
 }
 
-/* Custom styles for navigation items in the sidebar */
-.sidebar-nav .nav-item {
-    font-size: 0.9em; /* Reduced font size for menu items */
+/* Professional Color Scheme Overrides */
+/* These are general overrides and might need refinement once Kross theme's specific selectors are known. */
+/* Using !important to increase specificity against theme styles. */
+
+body {
+    font-family: 'Open Sans', sans-serif; /* Kept from original custom-styles */
+    line-height: 1.7; /* Kept from original custom-styles */
+    background-color: #f8f9fa !important; /* Light gray background */
+    color: #343a40 !important; /* Darker gray for text */
 }
 
-/* Container for main content to adjust spacing */
-.container {
-    /* The theme 'basically-basic' might have its own content wrapper.
-       This provides general padding for the content area. */
-    padding: 20px;    /* Add some padding around the content */
-    /* max-width: 1200px; /* Optional: constrain content width */
-    /* margin-right: auto; /* Optional: center if max-width is set */
-    /* margin-left: auto;  /* Optional: center if max-width is set */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', serif; /* Kept from original custom-styles */
+    margin-top: 1.5em; /* Kept from original custom-styles */
+    margin-bottom: 0.8em; /* Kept from original custom-styles */
+    color: #212529 !important; /* Near black for headings */
 }
 
-/* Responsive adjustment for smaller screens */
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
-    }
-    /* If the sidebar becomes a top bar or is toggleable,
-       main content might need padding-top instead of margin-left.
-       This depends on the theme's responsive behavior for the sidebar. */
+a {
+    text-decoration: none; /* Kept from original custom-styles */
+    color: #007bff !important; /* Professional blue for links */
+}
+
+a:hover {
+    text-decoration: underline; /* Kept from original custom-styles */
+    color: #0056b3 !important; /* Darker blue for hover */
+}
+
+/* Attempt to style Kross theme elements if known, otherwise these are general */
+/* Common Kross selectors might include .header, .navigation, .banner, .section-title, .btn */
+.header, .navigation { /* Example generic Kross header/nav */
+    background-color: #ffffff !important; /* White header/nav background */
+    border-bottom: 1px solid #e0e0e0 !important; /* Subtle border */
+}
+
+/* General button styling, including Kross .btn if it uses that class */
+.button, .btn, input[type="submit"], input[type="button"] {
+    background-color: #007bff !important;
+    color: white !important;
+    border: none !important; /* Ensure no theme border overrides */
+    padding: 10px 20px !important; /* Consistent padding */
+    text-transform: uppercase !important; /* From original button style */
+    letter-spacing: 1px !important; /* From original button style */
+    font-weight: bold !important; /* From original button style */
+    cursor: pointer !important; /* From original button style */
+    transition: background-color 0.3s ease !important; /* From original button style */
+}
+
+.button:hover, .btn:hover, input[type="submit"]:hover, input[type="button"]:hover {
+    background-color: #0056b3 !important;
+    color: white !important;
+}
+
+/* Style for sections - adjust as needed based on theme's existing classes */
+/* This .site-section style is from the old custom CSS. It might or might not apply to Kross. */
+.site-section {
+    padding: 40px 20px;
 }
