@@ -68,3 +68,28 @@ a:hover {
 .site-section {
     padding: 40px 20px;
 }
+
+/* Custom styles for navigation items in the sidebar */
+.sidebar-nav .nav-item {
+    font-size: 0.9em; /* Reduced font size for menu items */
+}
+
+/* Container for main content to adjust spacing */
+.container {
+    /* The theme 'basically-basic' might have its own content wrapper.
+       This provides general padding for the content area. */
+    padding: 20px;    /* Add some padding around the content */
+    /* max-width: 1200px; /* Optional: constrain content width */
+    /* margin-right: auto; /* Optional: center if max-width is set */
+    /* margin-left: auto;  /* Optional: center if max-width is set */
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    /* If the sidebar becomes a top bar or is toggleable,
+       main content might need padding-top instead of margin-left.
+       This depends on the theme's responsive behavior for the sidebar. */
+}
