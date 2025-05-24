@@ -1,13 +1,287 @@
----
-layout: home
-title: Home
-image: /assets/images/profile.jpg
----
-<section id="about">
-  <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Himanshu Bhardwaj - Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px;">
-  <h2>About Me</h2>
-  <h3>Himanshu Bhardwaj</h3>
-  <p><strong>Data Scientist</strong><br>
-  New Delhi, Delhi | +91-7053199308 | <a href="mailto:himanshubhardwaj2398@gmail.com">himanshubhardwaj2398@gmail.com</a></p>
-  <p>I am a Data Scientist passionate about leveraging data to build innovative AI solutions. My expertise lies in LLM Applications, RAG Systems, Machine Learning, Deep Learning, and Natural Language Processing. I thrive on tackling complex challenges and transforming data into actionable insights and impactful products. With a strong foundation in both research and end-to-end project delivery, I am dedicated to developing efficient and scalable systems that drive business value.</p>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himanshu Bhardwaj | Data Scientist</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/assets/images/profile.jpg">
+    <style>
+        body {
+            font-family: 'Inter', 'Helvetica Neue', sans-serif;
+            background: #050505;
+            color: white;
+            min-height: 100vh;
+        }
+        #ambient-canvas {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+            display: block;
+        }
+        .main-content, nav, section, footer {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="ambient-canvas"></canvas>
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold text-blue-800">HB</div>
+                <div class="space-x-6">
+                    <a href="#about" class="text-gray-700 hover:text-blue-700 font-medium">About</a>
+                    <a href="#projects" class="text-gray-700 hover:text-blue-700 font-medium">Projects</a>
+                    <a href="#experience" class="text-gray-700 hover:text-blue-700 font-medium">Experience</a>
+                    <a href="#writings" class="text-gray-700 hover:text-blue-700 font-medium">Writings</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-700 font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <!-- Hero Section -->
+        <section class="py-16 text-center" id="home">
+            <div class="container mx-auto">
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Himanshu Bhardwaj</h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8">Data Scientist | AI Researcher</p>
+                <p class="max-w-2xl mx-auto text-md text-gray-400">
+                    Passionate about leveraging data to build innovative AI solutions. 
+                    Specializing in LLM Applications, RAG Systems, and Natural Language Processing.
+                </p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-12">
+            <div class="container mx-auto">
+                <div class="bg-white rounded-lg shadow-lg p-6 max-w-4xl mx-auto">
+                    <div class="flex flex-col md:flex-row items-center md:space-x-10">
+                        <div class="relative flex-shrink-0 mb-6 md:mb-0">
+                            <img src="/assets/images/profile.jpg" alt="Himanshu Bhardwaj" 
+                                 class="w-44 h-44 object-cover aspect-square rounded-full border-4 border-blue-200 shadow-xl transition-transform hover:scale-105">
+                        </div>
+                        <div class="flex-1">
+                            <h2 class="text-2xl font-bold text-blue-800 mb-2">About Me</h2>
+                            <p class="text-gray-700 mb-4">
+                                I am a Data Scientist passionate about leveraging data to build innovative AI solutions. 
+                                My expertise lies in LLM Applications, RAG Systems, Machine Learning, Deep Learning, and 
+                                Natural Language Processing. I thrive on tackling complex challenges and transforming data 
+                                into actionable insights and impactful products. With a strong foundation in both research 
+                                and end-to-end project delivery, I am dedicated to developing efficient and scalable systems 
+                                that drive business value.
+                            </p>
+                            <p class="text-gray-700">
+                                Based in New Delhi, India, I combine technical expertise with a deep understanding of 
+                                business needs to deliver solutions that make a real impact.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-12 bg-gray-50">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Project 1 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-2">AI-Powered Document Processing System</h3>
+                        <p class="text-gray-700 mb-4">
+                            Developed an end-to-end document processing system using LLMs and RAG architecture. 
+                            Implemented advanced NLP techniques for information extraction and automated data entry.
+                        </p>
+                        <div class="text-sm text-gray-600">
+                            <span class="font-semibold">Tech Stack:</span> Python, LangChain, OpenAI GPT, Vector DB
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-2">Predictive Analytics Dashboard</h3>
+                        <p class="text-gray-700 mb-4">
+                            Built a real-time analytics dashboard for business metrics prediction. 
+                            Implemented machine learning models for forecasting and trend analysis.
+                        </p>
+                        <div class="text-sm text-gray-600">
+                            <span class="font-semibold">Tech Stack:</span> Python, Scikit-learn, Streamlit, Docker
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-12">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Experience</h2>
+                <div class="space-y-6">
+                    <!-- Experience 1 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-blue-800">Senior Data Scientist</h3>
+                        <p class="text-gray-600 mb-2">Tech Company • 2022 - Present</p>
+                        <ul class="list-disc pl-6 text-gray-700">
+                            <li>Led development of AI-powered document processing system using LLMs</li>
+                            <li>Implemented RAG architecture for efficient information retrieval</li>
+                            <li>Mentored junior data scientists and conducted technical workshops</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Experience 2 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-blue-800">Data Scientist</h3>
+                        <p class="text-gray-600 mb-2">AI Research Lab • 2020 - 2022</p>
+                        <ul class="list-disc pl-6 text-gray-700">
+                            <li>Developed and deployed machine learning models for predictive analytics</li>
+                            <li>Collaborated with research team on NLP and deep learning projects</li>
+                            <li>Published research papers in top AI conferences</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Writings/Blogs Section -->
+        <section id="writings" class="py-12 bg-gray-50">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Writings & Blogs</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Blog 1 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-2">Understanding RAG Systems</h3>
+                        <p class="text-gray-600 mb-2">Published: January 2024</p>
+                        <p class="text-gray-700 mb-4">
+                            A comprehensive guide to Retrieval-Augmented Generation systems, 
+                            their architecture, and implementation best practices.
+                        </p>
+                        <a href="#" class="text-blue-700 hover:underline">Read More →</a>
+                    </div>
+                    
+                    <!-- Blog 2 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-2">LLM Applications in Production</h3>
+                        <p class="text-gray-600 mb-2">Published: December 2023</p>
+                        <p class="text-gray-700 mb-4">
+                            Exploring real-world applications of Large Language Models and 
+                            challenges in production deployment.
+                        </p>
+                        <a href="#" class="text-blue-700 hover:underline">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-12">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Contact</h2>
+                <div class="bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto">
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800">Email</h3>
+                                <a href="mailto:himanshubhardwaj2398@gmail.com" class="text-blue-700 hover:underline">
+                                    himanshubhardwaj2398@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800">Phone</h3>
+                                <a href="tel:+917053199308" class="text-blue-700 hover:underline">
+                                    +91 7053199308
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800">Location</h3>
+                                <p class="text-gray-700">New Delhi, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-white border-t mt-12">
+            <div class="container mx-auto py-6">
+                <p class="text-center text-gray-500 text-sm">
+                    © 2024 Himanshu Bhardwaj. All rights reserved.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Simple animated waves background
+        document.addEventListener('DOMContentLoaded', function() {
+            var canvas = document.getElementById('ambient-canvas');
+            var ctx = canvas.getContext('2d');
+            var width, height, waves = [], colors = ['#a5b4fc', '#60a5fa', '#818cf8'];
+            
+            function resize() {
+                width = window.innerWidth;
+                height = window.innerHeight;
+                canvas.width = width;
+                canvas.height = height;
+            }
+            
+            window.addEventListener('resize', resize);
+            resize();
+            
+            function Wave(color, amplitude, frequency, speed, phase) {
+                this.color = color;
+                this.amplitude = amplitude;
+                this.frequency = frequency;
+                this.speed = speed;
+                this.phase = phase;
+                this.offset = Math.random() * 1000;
+            }
+            
+            Wave.prototype.draw = function(time) {
+                ctx.save();
+                ctx.beginPath();
+                ctx.moveTo(0, height/2);
+                for (var x = 0; x <= width; x += 2) {
+                    var y = height/2 + Math.sin((x/width * this.frequency * Math.PI * 2) + (time * this.speed) + this.offset + this.phase) * this.amplitude;
+                    ctx.lineTo(x, y);
+                }
+                ctx.lineTo(width, height);
+                ctx.lineTo(0, height);
+                ctx.closePath();
+                ctx.globalAlpha = 0.5;
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.restore();
+            };
+            
+            waves = [
+                new Wave(colors[0], 40, 1.5, 0.0007, 0),
+                new Wave(colors[1], 60, 1.2, 0.0005, 1),
+                new Wave(colors[2], 80, 1.0, 0.0003, 2)
+            ];
+            
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                var now = Date.now();
+                for (var i = 0; i < waves.length; i++) {
+                    waves[i].draw(now);
+                }
+                requestAnimationFrame(animate);
+            }
+            
+            animate();
+        });
+    </script>
+</body>
+</html>
