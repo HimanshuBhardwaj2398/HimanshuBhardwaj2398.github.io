@@ -1,0 +1,12 @@
+# Ignore bundler cache and local gem installs
+vendor/
+# Ignore other common Jekyll build outputs
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+# Ignore OS-specific files
+.DS_Store
+# Ignore IDE/editor specific files
+.vscode/
+.idea/

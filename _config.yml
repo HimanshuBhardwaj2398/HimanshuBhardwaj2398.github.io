@@ -25,7 +25,7 @@ navigation:
     url: /blog/
 
 # Theme settings
-remote_theme: perstarke-webdev/oneflow-jekyll-theme
+remote_theme: mmistakes/jekyll-theme-basically-basic
 
 # Build settings
 markdown: kramdown
