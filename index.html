@@ -3,56 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Himanshu Bhardwaj | Data Scientist</title>
+    <title>Himanshu Bhardwaj | AI Engineer - Data Science Consultant</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="AI Engineer and Data Science Consultant specializing in Agentic AI, LLM Pipelines, RAG Systems, and Machine Learning. Building production-ready AI solutions for healthcare, financial, and legal sectors.">
+    <meta name="keywords" content="AI Engineer, Data Scientist, LLM, RAG Systems, Agentic AI, Machine Learning, NLP, Python, AWS, Azure, Deep Learning">
+    <meta name="author" content="Himanshu Bhardwaj">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Himanshu Bhardwaj | AI Engineer - Data Science Consultant">
+    <meta property="og:description" content="Building production-ready AI solutions for healthcare, financial, and legal sectors. Specializing in LLMs, RAG, and Agentic AI.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://himanshubhardwaj2398.github.io">
+    <meta property="og:image" content="/assets/images/profile.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Himanshu Bhardwaj | AI Engineer">
+    <meta name="twitter:description" content="Building production-ready AI solutions. Specializing in LLMs, RAG, and Agentic AI.">
+    <meta name="twitter:image" content="/assets/images/profile.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://himanshubhardwaj2398.github.io">
+
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="/assets/images/profile.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #1e40af;
+            --secondary: #06b6d4;
+            --accent: #8b5cf6;
+            --dark-bg: #0f172a;
+            --light-bg: #f8fafc;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', 'Helvetica Neue', sans-serif;
-            background: #050505;
-            color: white;
+            background: var(--light-bg);
+            color: #374151;
             min-height: 100vh;
         }
+
         #ambient-canvas {
             position: fixed;
             top: 0; left: 0; width: 100vw; height: 100vh;
             z-index: 0;
             pointer-events: none;
             display: block;
+            opacity: 0.7;
         }
+
         .main-content, nav, section, footer {
             position: relative;
             z-index: 1;
         }
-        nav {
-            background-color: #f9fafb;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-bottom: 1px solid #e5e7eb;
+
+        /* Dark sections */
+        .section-dark {
+            background: var(--dark-bg);
+            color: white;
         }
+
+        /* Nav styling with glassmorphism */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+        }
+
         nav a {
             position: relative;
-            transition: color 0.3s ease;
+            transition: all 0.2s ease;
             color: #374151;
             font-weight: 500;
             padding: 0.5rem 0.75rem;
             border-radius: 0.375rem;
         }
+
         nav a:hover {
-            color: #111827;
-            background-color: rgba(0, 0, 0, 0.05);
+            color: var(--primary);
+            background-color: rgba(30, 64, 175, 0.05);
         }
+
         nav .logo {
-            color: #2563eb;
-            font-weight: 700;
-            font-size: 1.75rem;
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        /* Fade-in animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in-delay-1 { transition-delay: 0.1s; }
+        .fade-in-delay-2 { transition-delay: 0.2s; }
+        .fade-in-delay-3 { transition-delay: 0.3s; }
+
+        /* Hover lift effect */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Focus styles for accessibility */
+        a:focus, button:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        /* Screen reader only */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
     </style>
 </head>
 <body>
-    <canvas id="ambient-canvas"></canvas>
-    
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded z-50">
+        Skip to main content
+    </a>
+
+    <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50">
+    <nav class="sticky top-0 z-50" role="navigation" aria-label="Main navigation">
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <div class="logo">HB</div>
@@ -62,27 +167,36 @@
                     <a href="#projects">Projects</a>
                     <a href="#experience">Experience</a>
                     <a href="#education">Education</a>
-                    <a href="#writings">Writings</a>
+                    <a href="#blog">Blog</a>
                     <a href="#contact">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <div class="main-content">
+    <main id="main-content" class="main-content" role="main">
         <!-- Hero Section -->
-        <section class="py-16 text-center" id="home">
-            <div class="container mx-auto">
-                <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Himanshu Bhardwaj</h1>
-                <p class="text-xl md:text-2xl text-gray-300 mb-4">Data Scientist</p>
-                <p class="text-md text-gray-400 mb-2">New Delhi, Delhi, India</p>
-                <div class="flex justify-center space-x-4 mb-8">
-                    <a href="mailto:himanshubhardwaj2398@gmail.com" class="text-blue-400 hover:text-blue-600">Email</a>
-                    <a href="https://github.com/HimanshuBhardwaj2398" class="text-blue-400 hover:text-blue-600">GitHub</a>
-                    <a href="https://www.linkedin.com/in/himanshu-bhardwaj-80a087118/" class="text-blue-400 hover:text-blue-600">LinkedIn</a>
+        <section class="py-20 text-center section-dark" id="home">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 text-white">Himanshu Bhardwaj</h1>
+                <p class="text-xl md:text-2xl text-cyan-400 mb-4 font-medium">AI Engineer — Data Science Consultant</p>
+                <p class="text-md text-gray-400 mb-6">New Delhi, India</p>
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="mailto:himanshubhardwaj2398@gmail.com" class="text-gray-300 hover:text-cyan-400 transition-colors flex items-center gap-2" aria-label="Send email">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        Email
+                    </a>
+                    <a href="https://github.com/HimanshuBhardwaj2398" class="text-gray-300 hover:text-cyan-400 transition-colors flex items-center gap-2" aria-label="GitHub profile">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/himanshu-bhardwaj-80a087118/" class="text-gray-300 hover:text-cyan-400 transition-colors flex items-center gap-2" aria-label="LinkedIn profile">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        LinkedIn
+                    </a>
                 </div>
-                <p class="max-w-2xl mx-auto text-md text-white">
-                    Data Scientist with a passion for building innovative AI and data-driven solutions. Experienced in LLM applications, RAG systems, NLP, and end-to-end project delivery for financial, legal, and business domains. Adept at transforming complex data into actionable insights and scalable products.
+                <p class="max-w-2xl mx-auto text-lg text-gray-300 leading-relaxed">
+                    AI Engineer specializing in Agentic AI, LLM-based Automated Pipelines, and Retrieval-Augmented Generation (RAG) systems. Experienced in building end-to-end AI solutions for healthcare, financial, and legal domains.
                 </p>
             </div>
         </section>
@@ -99,10 +213,10 @@
                         <div class="flex-1">
                             <h2 class="text-3xl font-bold text-blue-800 mb-4">About Me</h2>
                             <p class="text-gray-700 text-lg leading-relaxed mb-6">
-                                I am a Data Scientist with hands-on experience in developing and deploying AI-powered systems for real-world impact. My expertise spans LLM applications, RAG systems, NLP, and machine learning, with a proven track record of delivering solutions that drive efficiency and business value. I thrive in fast-paced environments, collaborating with cross-functional teams to solve complex problems and deliver results.
+                                I am an AI Engineer with hands-on experience in developing and deploying AI-powered systems for real-world impact. My expertise spans Large Language Models, Agentic AI, LLM-based Automated Pipelines, RAG systems, and Natural Language Processing, with a proven track record of delivering production-ready solutions that drive efficiency and business value.
                             </p>
                             <p class="text-gray-700 text-lg leading-relaxed">
-                                With a strong foundation in both technical and business domains, I bring a unique perspective to every project. My passion lies in creating innovative solutions that not only solve complex technical challenges but also deliver tangible business value. I'm constantly learning and adapting to new technologies and methodologies to stay at the forefront of the rapidly evolving field of AI and data science.
+                                With a strong foundation in both technical and business domains, I bring a unique perspective to every project—from architecting event-driven data pipelines to building real-time AI systems. Currently focused on AI-based data extraction for healthcare and previously delivered financial analysis platforms processing 160+ stock listings with sub-30-second response times.
                             </p>
                         </div>
                     </div>
@@ -111,70 +225,83 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="py-12 bg-white">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Skills</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-white rounded-lg shadow-lg p-6">
-                        <h3 class="text-xl font-bold text-blue-800 mb-4">Technical Expertise</h3>
-                        <div class="space-y-4">
-                            <div>
-                                <h4 class="font-bold text-gray-800 mb-2">AI & Machine Learning</h4>
-                                <ul class="list-disc pl-6 text-gray-700">
-                                    <li>LLM Applications & RAG Systems</li>
-                                    <li>Deep Learning & Neural Networks</li>
-                                    <li>Natural Language Processing (NLP)</li>
-                                    <li>Machine Learning Algorithms</li>
-                                    <li>Probability & Statistics</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800 mb-2">Programming & Tools</h4>
-                                <ul class="list-disc pl-6 text-gray-700">
-                                    <li>Python, SQL</li>
-                                    <li>GitHub, Git Version Control</li>
-                                    <li>Advanced MS Excel</li>
-                                    <li>Data Analysis Tools</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800 mb-2">Cloud & Infrastructure</h4>
-                                <ul class="list-disc pl-6 text-gray-700">
-                                    <li>AWS, Azure Cloud Services</li>
-                                    <li>PostgreSQL, Vector Databases</li>
-                                    <li>Data Pipeline Architecture</li>
-                                </ul>
-                            </div>
+        <section id="skills" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Technical Skills</h2>
+                <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Building production-ready AI systems with modern tools and technologies</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- AI/ML -->
+                    <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300 border-t-4 border-blue-500">
+                        <div class="flex items-center mb-4">
+                            <span class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                                </svg>
+                            </span>
+                            <h3 class="text-lg font-bold text-gray-900">AI & ML</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">LLMs</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">Agentic AI</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">LLM Pipelines</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">RAG</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">Deep Learning</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">NLP</span>
                         </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-6">
-                        <h3 class="text-xl font-bold text-blue-800 mb-4">Professional Skills</h3>
-                        <div class="space-y-4">
-                            <div>
-                                <h4 class="font-bold text-gray-800 mb-2">Project Management</h4>
-                                <ul class="list-disc pl-6 text-gray-700">
-                                    <li>Agile Methodologies</li>
-                                    <li>Cross-functional Team Leadership</li>
-                                    <li>Project Planning & Execution</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800 mb-2">Business Acumen</h4>
-                                <ul class="list-disc pl-6 text-gray-700">
-                                    <li>Product Thinking & Strategy</li>
-                                    <li>Business Analytics</li>
-                                    <li>Stakeholder Management</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800 mb-2">Communication & Collaboration</h4>
-                                <ul class="list-disc pl-6 text-gray-700">
-                                    <li>Technical Documentation</li>
-                                    <li>Client Presentations</li>
-                                    <li>Team Collaboration</li>
-                                    <li>Problem-Solving</li>
-                                </ul>
-                            </div>
+                    <!-- Programming -->
+                    <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300 border-t-4 border-green-500">
+                        <div class="flex items-center mb-4">
+                            <span class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+                                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                                </svg>
+                            </span>
+                            <h3 class="text-lg font-bold text-gray-900">Programming</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-sm font-medium">Python</span>
+                            <span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-sm font-medium">SQL</span>
+                            <span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-sm font-medium">PostgreSQL</span>
+                            <span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-sm font-medium">Vector DBs</span>
+                            <span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-sm font-medium">Excel</span>
+                            <span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-sm font-medium">Data Analysis</span>
+                        </div>
+                    </div>
+                    <!-- Cloud & DevOps -->
+                    <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300 border-t-4 border-purple-500">
+                        <div class="flex items-center mb-4">
+                            <span class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
+                                <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+                                </svg>
+                            </span>
+                            <h3 class="text-lg font-bold text-gray-900">Cloud & DevOps</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm font-medium">AWS</span>
+                            <span class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm font-medium">Azure</span>
+                            <span class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm font-medium">Docker</span>
+                            <span class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm font-medium">Git/GitHub</span>
+                            <span class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm font-medium">CI/CD</span>
+                        </div>
+                    </div>
+                    <!-- Data Engineering -->
+                    <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300 border-t-4 border-orange-500">
+                        <div class="flex items-center mb-4">
+                            <span class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
+                                <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
+                                </svg>
+                            </span>
+                            <h3 class="text-lg font-bold text-gray-900">Data Engineering</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-orange-50 text-orange-700 rounded-full text-sm font-medium">Dagster</span>
+                            <span class="px-3 py-1 bg-orange-50 text-orange-700 rounded-full text-sm font-medium">ETL/ELT</span>
+                            <span class="px-3 py-1 bg-orange-50 text-orange-700 rounded-full text-sm font-medium">Real-time</span>
+                            <span class="px-3 py-1 bg-orange-50 text-orange-700 rounded-full text-sm font-medium">Web Scraping</span>
+                            <span class="px-3 py-1 bg-orange-50 text-orange-700 rounded-full text-sm font-medium">Doc Parsing</span>
                         </div>
                     </div>
                 </div>
@@ -182,57 +309,162 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="py-12">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-bold text-white mb-8 text-center">Key Projects</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-white rounded-lg shadow-lg p-6">
-                        <h3 class="text-xl font-bold text-blue-800 mb-2">MCQ Generation System</h3>
-                        <p class="text-gray-700 mb-2">LLM-based test generation system for video content, reducing manual question creation time by 80%. Deployed as AWS Lambda API, handling asynchronous requests and notifications.</p>
+        <section id="projects" class="py-16 section-dark">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-white mb-4 text-center">Featured Projects</h2>
+                <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">Production systems delivering real business value</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-6 border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 hover-lift">
+                        <div class="flex items-center mb-4">
+                            <span class="w-10 h-10 bg-cyan-500/20 rounded-lg flex items-center justify-center mr-3">
+                                <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                            </span>
+                            <span class="text-xs text-cyan-400 font-semibold uppercase tracking-wider">Healthcare AI</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">AI Data Extraction Pipeline</h3>
+                        <p class="text-gray-400 text-sm mb-4">End-to-end AI pipelines for Systematic Literature Reviews in pharmaceutical research with automated document parsing and extraction.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-slate-700 text-gray-300 rounded text-xs">LLMs</span>
+                            <span class="px-2 py-1 bg-slate-700 text-gray-300 rounded text-xs">Document AI</span>
+                            <span class="px-2 py-1 bg-slate-700 text-gray-300 rounded text-xs">Dagster</span>
+                        </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-6">
-                        <h3 class="text-xl font-bold text-blue-800 mb-2">Stock Market Analysis Pipeline</h3>
-                        <p class="text-gray-700 mb-2">Engineered data pipeline for 160+ stock listings, processing 1000s of financial press releases daily. Developed low-latency RAG + Web search system for efficient context retrieval and analytics.</p>
+                    <!-- Project 2 -->
+                    <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-6 border border-slate-700 hover:border-blue-500/50 transition-all duration-300 hover-lift">
+                        <div class="flex items-center mb-4">
+                            <span class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center mr-3">
+                                <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/>
+                                </svg>
+                            </span>
+                            <span class="text-xs text-blue-400 font-semibold uppercase tracking-wider">Financial AI</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Stock Market Analysis Platform</h3>
+                        <p class="text-gray-400 text-sm mb-4">Event-driven Azure pipeline processing 160+ stocks with real-time RAG system achieving 40% improved response relevance.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-slate-700 text-gray-300 rounded text-xs">RAG</span>
+                            <span class="px-2 py-1 bg-slate-700 text-gray-300 rounded text-xs">Azure</span>
+                            <span class="px-2 py-1 bg-slate-700 text-gray-300 rounded text-xs">Real-time</span>
+                        </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-6">
-                        <h3 class="text-xl font-bold text-blue-800 mb-2">LLM-Powered Tweet Bot</h3>
-                        <p class="text-gray-700 mb-2">Co-designed and deployed a tweet bot posting updates within 30 seconds of press releases for 100+ companies, used as a revenue stream and for user engagement analytics.</p>
+                    <!-- Project 3 -->
+                    <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-6 border border-slate-700 hover:border-purple-500/50 transition-all duration-300 hover-lift">
+                        <div class="flex items-center mb-4">
+                            <span class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center mr-3">
+                                <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                </svg>
+                            </span>
+                            <span class="text-xs text-purple-400 font-semibold uppercase tracking-wider">Automation</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">LLM-Powered Twitter Bot</h3>
+                        <p class="text-gray-400 text-sm mb-4">Real-time bot (@KalqylAI) posting updates within 30 seconds of press releases for 100+ companies, driving engagement and revenue.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-slate-700 text-gray-300 rounded text-xs">LLMs</span>
+                            <span class="px-2 py-1 bg-slate-700 text-gray-300 rounded text-xs">APIs</span>
+                            <span class="px-2 py-1 bg-slate-700 text-gray-300 rounded text-xs">Real-time</span>
+                        </div>
+                    </div>
+                    <!-- Project 4 -->
+                    <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-6 border border-slate-700 hover:border-green-500/50 transition-all duration-300 hover-lift">
+                        <div class="flex items-center mb-4">
+                            <span class="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center mr-3">
+                                <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                            </span>
+                            <span class="text-xs text-green-400 font-semibold uppercase tracking-wider">Report Gen</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">AI Report Generation System</h3>
+                        <p class="text-gray-400 text-sm mb-4">Dynamic outline generation, intelligent retrieval, numerical extraction, and automated graph plotting for stock analysis reports.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-slate-700 text-gray-300 rounded text-xs">Agentic AI</span>
+                            <span class="px-2 py-1 bg-slate-700 text-gray-300 rounded text-xs">NLP</span>
+                            <span class="px-2 py-1 bg-slate-700 text-gray-300 rounded text-xs">Automation</span>
+                        </div>
+                    </div>
+                    <!-- Project 5 -->
+                    <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-6 border border-slate-700 hover:border-orange-500/50 transition-all duration-300 hover-lift">
+                        <div class="flex items-center mb-4">
+                            <span class="w-10 h-10 bg-orange-500/20 rounded-lg flex items-center justify-center mr-3">
+                                <svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                                </svg>
+                            </span>
+                            <span class="text-xs text-orange-400 font-semibold uppercase tracking-wider">Enterprise AI</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Enterprise RAG Platform</h3>
+                        <p class="text-gray-400 text-sm mb-4">File-type chunking, metadata extraction, TOC mapping for PowerPoint and document retrieval with persona customization.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-slate-700 text-gray-300 rounded text-xs">RAG</span>
+                            <span class="px-2 py-1 bg-slate-700 text-gray-300 rounded text-xs">Vector DB</span>
+                            <span class="px-2 py-1 bg-slate-700 text-gray-300 rounded text-xs">LangChain</span>
+                        </div>
+                    </div>
+                    <!-- Project 6 -->
+                    <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-6 border border-slate-700 hover:border-pink-500/50 transition-all duration-300 hover-lift">
+                        <div class="flex items-center mb-4">
+                            <span class="w-10 h-10 bg-pink-500/20 rounded-lg flex items-center justify-center mr-3">
+                                <svg class="w-5 h-5 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </span>
+                            <span class="text-xs text-pink-400 font-semibold uppercase tracking-wider">Analytics</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Survey Analytics NLP Pipeline</h3>
+                        <p class="text-gray-400 text-sm mb-4">End-to-end NLP for analyzing open-ended survey responses with clustering algorithms for strategic client insights.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-slate-700 text-gray-300 rounded text-xs">NLP</span>
+                            <span class="px-2 py-1 bg-slate-700 text-gray-300 rounded text-xs">HDBSCAN</span>
+                            <span class="px-2 py-1 bg-slate-700 text-gray-300 rounded text-xs">UMAP</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="py-12 bg-white">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Professional Experience</h2>
+        <section id="experience" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Professional Experience</h2>
+                <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Building AI solutions across healthcare, finance, and enterprise domains</p>
                 <div class="space-y-6">
                     <div class="bg-white rounded-lg shadow-lg p-6">
-                        <h3 class="text-xl font-bold text-blue-800">Data Science Consultant</h3>
-                        <p class="text-gray-600 mb-2">Predli Consulting AB • Sept 2023 - Present</p>
+                        <h3 class="text-xl font-bold text-blue-800">AI Engineer</h3>
+                        <p class="text-gray-600 mb-2">Bridge Medical Consulting • Dec 2025 - Present</p>
                         <ul class="list-disc pl-6 text-gray-700">
-                            <li>Developed and deployed AI-powered systems, increasing client operational efficiency and reducing manual workload</li>
-                            <li>Implemented end-to-end data pipelines and RAG systems for major financial and legal sector clients, resulting in faster operations and new revenue streams</li>
-                            <li>Responsible for research, proposal, design, development, and automation of innovative LLM and generative AI solutions</li>
+                            <li>Developing, implementing, and deploying AI-based data extraction pipelines with automated end-to-end strategies for complex workflows used in Systematic Literature Reviews for pharmaceutical drug development and research</li>
+                            <li>Refactoring existing pipelines with enhanced tracking, observability, and data strategy to enable non-technical team members to use the platform while ensuring effective traceability and audit trails</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-blue-800">AI & ML Consultant</h3>
+                        <p class="text-gray-600 mb-2">Predli Consulting AB • Sept 2023 - Dec 2025</p>
+                        <ul class="list-disc pl-6 text-gray-700">
+                            <li>Architected an event-driven Azure data pipeline processing 160+ stock listings with automated web scraping, document parsing, and real-time backfilling for new firms</li>
+                            <li>Built a production-ready RAG system with optimized chunking strategies, achieving 40% improved response relevance based on client feedback</li>
+                            <li>Developed an LLM-powered Twitter bot (@KalqylAI) with sub-30-second response times to press releases, driving client engagement and revenue</li>
+                            <li>Led development of AI-driven stock analysis report generation featuring dynamic outline generation, intelligent information retrieval, and automated graph plotting</li>
+                            <li>Built agentic capabilities including template-based report generation, persona customization, and AI workflow automation</li>
                         </ul>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-6">
                         <h3 class="text-xl font-bold text-blue-800">Data Science Intern</h3>
                         <p class="text-gray-600 mb-2">Predli Consulting AB • Apr 2023 - Jun 2023</p>
                         <ul class="list-disc pl-6 text-gray-700">
-                            <li>Designed and developed topic modelling and clustering approach for analyzing open-ended survey responses</li>
-                            <li>Used Huggingface transformers, UMAP, and HDBSCAN for embedding, projection, and clustering</li>
-                            <li>Achieved 88% accuracy in clustering similar opinions, improving client insights and data-driven decisions</li>
+                            <li>Developed an end-to-end NLP pipeline for analyzing open-ended survey responses, implementing advanced clustering algorithms that improved client insight generation</li>
+                            <li>Used Huggingface transformers, UMAP, and HDBSCAN for embedding, projection, and clustering to enable data-driven strategic decisions</li>
                         </ul>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-6">
                         <h3 class="text-xl font-bold text-blue-800">Business Operations Associate</h3>
                         <p class="text-gray-600 mb-2">ZS Associates • Nov 2019 - Jan 2022</p>
                         <ul class="list-disc pl-6 text-gray-700">
-                            <li>Implemented Incentive Compensation strategies, optimizing $100M+ in annual sales and increasing team performance by 25%</li>
-                            <li>Automated weekly performance dashboards, saving 20+ hours/week and improving data accuracy by 15%</li>
-                            <li>Led ad-hoc analytics projects, mentoring junior associates and delivering actionable insights</li>
-                            <li>Involved in data migration project for a top 10 pharmaceutical company, developing solutions and quality check strategies</li>
+                            <li>Designed and implemented data-driven incentive compensation frameworks for sales teams managing $100M+ in annual revenue</li>
+                            <li>Automated weekly performance reporting systems and developed COVID-19 impact analysis dashboards, reducing manual effort by 20+ hours/week and improving decision-making speed</li>
                         </ul>
                     </div>
                 </div>
@@ -240,57 +472,131 @@
         </section>
 
         <!-- Education Section -->
-        <section id="education" class="py-12">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-bold text-white mb-8 text-center">Education</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                    <div class="bg-white rounded-lg shadow-lg p-6">
-                        <h3 class="text-xl font-bold text-blue-800 mb-2">Technology Leaders Program</h3>
-                        <p class="text-gray-700 mb-2">Plaksha University (in collaboration with UC Berkeley and Purdue University)</p>
-                        <p class="text-gray-600">2022-2023</p>
+        <section id="education" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Education</h2>
+                <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Strong foundation in engineering and technology leadership</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-blue-500 hover:shadow-lg transition-shadow">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-1">Technology Leaders Program</h3>
+                                <p class="text-blue-600 font-medium">Plaksha University</p>
+                            </div>
+                            <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">2022-2023</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">In collaboration with UC Berkeley and Purdue University</p>
+                        <p class="text-gray-700 mt-2 font-medium">CGPA: 9.1/10</p>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-6">
-                        <h3 class="text-xl font-bold text-blue-800 mb-2">B.Tech in Electrical and Electronic Engineering, Minor in Physics</h3>
-                        <p class="text-gray-700 mb-2">Shiv Nadar University</p>
-                        <p class="text-gray-600">2015-2019 | CGPA: 8.08</p>
+                    <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-purple-500 hover:shadow-lg transition-shadow">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-1">B.Tech in Electrical Engineering</h3>
+                                <p class="text-purple-600 font-medium">Shiv Nadar University</p>
+                            </div>
+                            <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">2015-2019</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Minor in Physics</p>
+                        <p class="text-gray-700 mt-2 font-medium">CGPA: 8.08/10</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Writings/Blogs Section -->
-        <section id="writings" class="py-12 bg-white">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Writings & Blogs</h2>
-                <div class="text-center text-gray-700">Stay tuned for insights and articles on AI, Data Science, and more.</div>
+        <!-- Technical Blog Section -->
+        <section id="blog" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-2">Technical Blog</h2>
+                        <p class="text-gray-600">Insights on AI engineering, LLMs, and production systems</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Featured Post -->
+                    <div class="md:col-span-2 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-100 hover:shadow-lg transition-shadow">
+                        <span class="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wider rounded-full mb-4">Featured</span>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Building Production-Ready RAG Systems</h3>
+                        <p class="text-gray-600 mb-6">A comprehensive guide to designing, implementing, and deploying Retrieval-Augmented Generation systems that scale. Covering chunking strategies, embedding optimization, and real-world lessons from production.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">Coming Soon</span>
+                            <div class="flex gap-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs">RAG</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs">LLMs</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs">Production</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Recent Posts -->
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors border border-gray-100">
+                            <span class="text-xs text-gray-500 font-medium">Coming Soon</span>
+                            <h4 class="font-semibold text-gray-900 mt-2 mb-2">Agentic AI Patterns in Production</h4>
+                            <p class="text-gray-600 text-sm">Building autonomous AI workflows that handle complex tasks reliably.</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors border border-gray-100">
+                            <span class="text-xs text-gray-500 font-medium">Coming Soon</span>
+                            <h4 class="font-semibold text-gray-900 mt-2 mb-2">Observability for LLM Pipelines</h4>
+                            <p class="text-gray-600 text-sm">Tracking, debugging, and monitoring AI systems at scale.</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors border border-gray-100">
+                            <span class="text-xs text-gray-500 font-medium">Coming Soon</span>
+                            <h4 class="font-semibold text-gray-900 mt-2 mb-2">Document Parsing at Scale</h4>
+                            <p class="text-gray-600 text-sm">Strategies for extracting structured data from complex documents.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-12">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-bold text-white mb-8 text-center">Contact</h2>
-                <div class="bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto">
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800">Email</h3>
-                                <a href="mailto:himanshubhardwaj2398@gmail.com" class="text-blue-700 hover:underline">
-                                    himanshubhardwaj2398@gmail.com
-                                </a>
+        <section id="contact" class="py-16 section-dark">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-white mb-4 text-center">Get In Touch</h2>
+                <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">Interested in collaborating on AI projects or discussing opportunities? Let's connect.</p>
+                <div class="max-w-2xl mx-auto">
+                    <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-8 border border-slate-700">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <div class="flex items-center mb-4">
+                                    <span class="w-10 h-10 bg-cyan-500/20 rounded-lg flex items-center justify-center mr-3">
+                                        <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <h3 class="text-white font-semibold">Email</h3>
+                                        <a href="mailto:himanshubhardwaj2398@gmail.com" class="text-cyan-400 hover:text-cyan-300 transition-colors text-sm">
+                                            himanshubhardwaj2398@gmail.com
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center mr-3">
+                                        <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <h3 class="text-white font-semibold">Location</h3>
+                                        <p class="text-gray-400 text-sm">New Delhi, India</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800">Location</h3>
-                                <p class="text-gray-700">New Delhi, Delhi, India</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800">Links</h3>
-                                <a href="https://github.com/HimanshuBhardwaj2398" class="text-blue-700 hover:underline mr-4">GitHub</a>
-                                <a href="https://www.linkedin.com/in/himanshu-bhardwaj-80a087118/" class="text-blue-700 hover:underline">LinkedIn</a>
+                            <div>
+                                <h3 class="text-white font-semibold mb-4">Connect</h3>
+                                <div class="flex space-x-4">
+                                    <a href="https://github.com/HimanshuBhardwaj2398" class="w-12 h-12 bg-slate-700 hover:bg-slate-600 rounded-lg flex items-center justify-center transition-colors" aria-label="GitHub">
+                                        <svg class="w-6 h-6 text-gray-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/himanshu-bhardwaj-80a087118/" class="w-12 h-12 bg-slate-700 hover:bg-slate-600 rounded-lg flex items-center justify-center transition-colors" aria-label="LinkedIn">
+                                        <svg class="w-6 h-6 text-gray-300" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                    </a>
+                                    <a href="mailto:himanshubhardwaj2398@gmail.com" class="w-12 h-12 bg-slate-700 hover:bg-slate-600 rounded-lg flex items-center justify-center transition-colors" aria-label="Email">
+                                        <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -298,75 +604,132 @@
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="bg-white border-t mt-12">
-            <div class="container mx-auto py-6">
-                <p class="text-center text-gray-500 text-sm">
-                    © 2024 Himanshu Bhardwaj. All rights reserved.
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800" role="contentinfo">
+        <div class="container mx-auto py-8 px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span class="text-xl font-bold text-white">HB</span>
+                    <p class="text-gray-400 text-sm mt-1">AI Engineer & Data Science Consultant</p>
+                </div>
+                <p class="text-gray-500 text-sm">
+                    © 2025 Himanshu Bhardwaj. All rights reserved.
                 </p>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
 
     <script>
-        // Simple animated waves background
+        // Intersection Observer for fade-in animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Smooth scroll with offset for fixed nav
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const offset = 80;
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Optimized wave animation with AI-themed colors
         document.addEventListener('DOMContentLoaded', function() {
             var canvas = document.getElementById('ambient-canvas');
             var ctx = canvas.getContext('2d');
-            var width, height, waves = [], colors = ['#a5b4fc', '#60a5fa', '#818cf8'];
-            
+            var width, height, waves = [];
+            // AI-themed color palette (blue, cyan, purple with transparency)
+            var colors = [
+                'rgba(30, 64, 175, 0.3)',
+                'rgba(6, 182, 212, 0.25)',
+                'rgba(139, 92, 246, 0.2)'
+            ];
+
             function resize() {
                 width = window.innerWidth;
                 height = window.innerHeight;
                 canvas.width = width;
                 canvas.height = height;
             }
-            
+
             window.addEventListener('resize', resize);
             resize();
-            
-            function Wave(color, amplitude, frequency, speed, phase) {
+
+            function Wave(color, amplitude, frequency, speed, phase, yOffset) {
                 this.color = color;
                 this.amplitude = amplitude;
                 this.frequency = frequency;
                 this.speed = speed;
                 this.phase = phase;
+                this.yOffset = yOffset || 0.5;
                 this.offset = Math.random() * 1000;
             }
-            
+
             Wave.prototype.draw = function(time) {
                 ctx.save();
                 ctx.beginPath();
-                ctx.moveTo(0, height/2);
-                for (var x = 0; x <= width; x += 2) {
-                    var y = height/2 + Math.sin((x/width * this.frequency * Math.PI * 2) + (time * this.speed) + this.offset + this.phase) * this.amplitude;
+                ctx.moveTo(0, height * this.yOffset);
+                for (var x = 0; x <= width; x += 3) {
+                    var y = height * this.yOffset + Math.sin((x/width * this.frequency * Math.PI * 2) + (time * this.speed) + this.offset + this.phase) * this.amplitude;
                     ctx.lineTo(x, y);
                 }
                 ctx.lineTo(width, height);
                 ctx.lineTo(0, height);
                 ctx.closePath();
-                ctx.globalAlpha = 0.5;
                 ctx.fillStyle = this.color;
                 ctx.fill();
                 ctx.restore();
             };
             
             waves = [
-                new Wave(colors[0], 40, 1.5, 0.0007, 0),
-                new Wave(colors[1], 60, 1.2, 0.0005, 1),
-                new Wave(colors[2], 80, 1.0, 0.0003, 2)
+                new Wave(colors[0], 50, 1.5, 0.0005, 0, 0.5),
+                new Wave(colors[1], 70, 1.2, 0.0004, 1.5, 0.55),
+                new Wave(colors[2], 90, 1.0, 0.0003, 3, 0.6)
             ];
-            
-            function animate() {
+
+            var lastTime = 0;
+            function animate(currentTime) {
+                // Throttle to ~30fps for performance
+                if (currentTime - lastTime < 33) {
+                    requestAnimationFrame(animate);
+                    return;
+                }
+                lastTime = currentTime;
+
                 ctx.clearRect(0, 0, width, height);
-                var now = Date.now();
                 for (var i = 0; i < waves.length; i++) {
-                    waves[i].draw(now);
+                    waves[i].draw(currentTime);
                 }
                 requestAnimationFrame(animate);
             }
-            
-            animate();
+
+            requestAnimationFrame(animate);
         });
     </script>
 </body>
