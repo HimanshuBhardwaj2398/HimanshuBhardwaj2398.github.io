@@ -453,6 +453,287 @@
                 font-size: 1.5rem;
             }
         }
+
+        /* ===== LIGHT SECTION INTERACTIVE EFFECTS ===== */
+
+        /* Light section mouse glow */
+        .light-glow-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .light-mouse-glow {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(30, 64, 175, 0.08) 0%, rgba(6, 182, 212, 0.05) 40%, transparent 70%);
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .light-glow-container:hover .light-mouse-glow {
+            opacity: 1;
+        }
+
+        /* Floating dots for light sections */
+        .floating-dots {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .floating-dot {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.3), rgba(6, 182, 212, 0.3));
+            animation: floatDot 15s infinite ease-in-out;
+        }
+
+        .floating-dot:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+        .floating-dot:nth-child(2) { left: 20%; top: 80%; animation-delay: -2s; }
+        .floating-dot:nth-child(3) { left: 60%; top: 10%; animation-delay: -4s; }
+        .floating-dot:nth-child(4) { left: 80%; top: 50%; animation-delay: -6s; }
+        .floating-dot:nth-child(5) { left: 40%; top: 60%; animation-delay: -8s; }
+        .floating-dot:nth-child(6) { left: 90%; top: 30%; animation-delay: -10s; }
+        .floating-dot:nth-child(7) { left: 5%; top: 70%; animation-delay: -12s; }
+        .floating-dot:nth-child(8) { left: 70%; top: 90%; animation-delay: -14s; }
+
+        @keyframes floatDot {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.4;
+            }
+            25% {
+                transform: translate(20px, -30px) scale(1.2);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translate(-10px, 20px) scale(0.8);
+                opacity: 0.5;
+            }
+            75% {
+                transform: translate(30px, 10px) scale(1.1);
+                opacity: 0.6;
+            }
+        }
+
+        /* 3D Tilt Card Effect for Light Sections */
+        .tilt-card {
+            transform-style: preserve-3d;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            will-change: transform;
+        }
+
+        .tilt-card:hover {
+            box-shadow: 0 20px 40px rgba(30, 64, 175, 0.15), 0 0 20px rgba(6, 182, 212, 0.1);
+        }
+
+        .tilt-card-inner {
+            transform: translateZ(20px);
+        }
+
+        /* Ripple Effect */
+        .ripple-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(30, 64, 175, 0.15);
+            transform: scale(0);
+            animation: rippleEffect 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes rippleEffect {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Enhanced Skill Tags */
+        .skill-tag {
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-tag::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .skill-tag:hover::after {
+            opacity: 1;
+        }
+
+        /* Magnetic Button Effect */
+        .magnetic-btn {
+            transition: transform 0.2s ease;
+        }
+
+        /* Animated Underline Effect */
+        .animated-underline {
+            position: relative;
+            display: inline-block;
+        }
+
+        .animated-underline::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -4px;
+            left: 50%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .animated-underline:hover::after {
+            width: 100%;
+        }
+
+        /* Card Shine Effect */
+        .card-shine {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-shine::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+            z-index: 1;
+        }
+
+        .card-shine:hover::before {
+            left: 100%;
+        }
+
+        /* Gradient Border Animation */
+        .gradient-border-animated {
+            position: relative;
+            background: white;
+            z-index: 1;
+        }
+
+        .gradient-border-animated::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+            background-size: 300% 100%;
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            animation: gradientMove 3s linear infinite;
+        }
+
+        .gradient-border-animated:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 300% 50%; }
+        }
+
+        /* Interactive Profile Image */
+        .profile-interactive {
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .profile-interactive:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 25px 50px rgba(30, 64, 175, 0.25);
+        }
+
+        .profile-interactive::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .profile-interactive:hover::after {
+            opacity: 1;
+        }
+
+        /* Staggered Animation for Lists */
+        .stagger-item {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.4s ease;
+        }
+
+        .stagger-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Experience Card Timeline Dot */
+        .timeline-dot {
+            position: relative;
+        }
+
+        .timeline-dot::before {
+            content: '';
+            position: absolute;
+            left: -28px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-dot:hover::before {
+            transform: translateY(-50%) scale(1.3);
+            box-shadow: 0 0 0 8px rgba(30, 64, 175, 0.15);
+        }
     </style>
 </head>
 <body>
@@ -533,16 +814,29 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="py-20">
-            <div class="container mx-auto px-4">
-                <div class="bg-white rounded-lg shadow-lg p-8 max-w-5xl mx-auto">
+        <section id="about" class="py-20 light-glow-container">
+            <!-- Floating Dots -->
+            <div class="floating-dots">
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+            </div>
+            <!-- Mouse Glow -->
+            <div class="light-mouse-glow" id="about-glow"></div>
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="bg-white rounded-lg shadow-lg p-8 max-w-5xl mx-auto tilt-card card-shine gradient-border-animated ripple-container">
                     <div class="flex flex-col md:flex-row items-center md:space-x-12">
                         <div class="relative flex-shrink-0 mb-8 md:mb-0">
-                            <img src="/assets/images/profile.jpg" alt="Himanshu Bhardwaj" 
-                                 class="w-64 h-64 md:w-72 md:h-72 object-cover aspect-square rounded-full border-4 border-blue-200 shadow-xl transition-transform hover:scale-105">
+                            <img src="/assets/images/profile.jpg" alt="Himanshu Bhardwaj"
+                                 class="w-64 h-64 md:w-72 md:h-72 object-cover aspect-square rounded-full border-4 border-blue-200 shadow-xl profile-interactive">
                         </div>
                         <div class="flex-1">
-                            <h2 class="text-3xl font-bold text-blue-800 mb-4">About Me</h2>
+                            <h2 class="text-3xl font-bold text-blue-800 mb-4 animated-underline">About Me</h2>
                             <p class="text-gray-700 text-lg leading-relaxed mb-6">
                                 I am an AI Engineer with hands-on experience in developing and deploying AI-powered systems for real-world impact. My expertise spans Large Language Models, Agentic AI, LLM-based Automated Pipelines, RAG systems, and Natural Language Processing, with a proven track record of delivering production-ready solutions that drive efficiency and business value.
                             </p>
@@ -556,13 +850,26 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="py-16 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Technical Skills</h2>
+        <section id="skills" class="py-16 bg-gray-50 light-glow-container">
+            <!-- Floating Dots -->
+            <div class="floating-dots">
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+            </div>
+            <!-- Mouse Glow -->
+            <div class="light-mouse-glow" id="skills-glow"></div>
+            <div class="container mx-auto px-4 relative z-10">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center animated-underline" style="display: inline-block; width: 100%;">Technical Skills</h2>
                 <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Building production-ready AI systems with modern tools and technologies</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- AI/ML -->
-                    <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300 border-t-4 border-blue-500">
+                    <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300 border-t-4 border-blue-500 tilt-card card-shine ripple-container">
                         <div class="flex items-center mb-4">
                             <span class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
                                 <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -599,7 +906,7 @@
                         </div>
                     </div>
                     <!-- Programming -->
-                    <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300 border-t-4 border-green-500">
+                    <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300 border-t-4 border-green-500 tilt-card card-shine ripple-container">
                         <div class="flex items-center mb-4">
                             <span class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-3">
                                 <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -632,7 +939,7 @@
                         </div>
                     </div>
                     <!-- Cloud & DevOps -->
-                    <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300 border-t-4 border-purple-500">
+                    <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300 border-t-4 border-purple-500 tilt-card card-shine ripple-container">
                         <div class="flex items-center mb-4">
                             <span class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
                                 <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -665,7 +972,7 @@
                         </div>
                     </div>
                     <!-- Data Engineering -->
-                    <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300 border-t-4 border-orange-500">
+                    <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300 border-t-4 border-orange-500 tilt-card card-shine ripple-container">
                         <div class="flex items-center mb-4">
                             <span class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
                                 <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -871,12 +1178,25 @@
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="py-16 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Professional Experience</h2>
+        <section id="experience" class="py-16 bg-white light-glow-container">
+            <!-- Floating Dots -->
+            <div class="floating-dots">
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+            </div>
+            <!-- Mouse Glow -->
+            <div class="light-mouse-glow" id="experience-glow"></div>
+            <div class="container mx-auto px-4 relative z-10">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center animated-underline" style="display: inline-block; width: 100%;">Professional Experience</h2>
                 <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Building AI solutions across healthcare, finance, and enterprise domains</p>
-                <div class="space-y-6">
-                    <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="space-y-6 pl-6 border-l-2 border-blue-200">
+                    <div class="bg-white rounded-lg shadow-lg p-6 tilt-card card-shine ripple-container timeline-dot">
                         <h3 class="text-xl font-bold text-blue-800">AI Engineer</h3>
                         <p class="text-gray-600 mb-2">Bridge Medical Consulting • Dec 2025 - Present</p>
                         <ul class="list-disc pl-6 text-gray-700">
@@ -884,7 +1204,7 @@
                             <li>Refactoring existing pipelines with enhanced tracking, observability, and data strategy to enable non-technical team members to use the platform while ensuring effective traceability and audit trails</li>
                         </ul>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="bg-white rounded-lg shadow-lg p-6 tilt-card card-shine ripple-container timeline-dot">
                         <h3 class="text-xl font-bold text-blue-800">AI & ML Consultant</h3>
                         <p class="text-gray-600 mb-2">Predli Consulting AB • Sept 2023 - Dec 2025</p>
                         <ul class="list-disc pl-6 text-gray-700">
@@ -895,7 +1215,7 @@
                             <li>Built agentic capabilities including template-based report generation, persona customization, and AI workflow automation</li>
                         </ul>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="bg-white rounded-lg shadow-lg p-6 tilt-card card-shine ripple-container timeline-dot">
                         <h3 class="text-xl font-bold text-blue-800">Data Science Intern</h3>
                         <p class="text-gray-600 mb-2">Predli Consulting AB • Apr 2023 - Jun 2023</p>
                         <ul class="list-disc pl-6 text-gray-700">
@@ -903,7 +1223,7 @@
                             <li>Used Huggingface transformers, UMAP, and HDBSCAN for embedding, projection, and clustering to enable data-driven strategic decisions</li>
                         </ul>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="bg-white rounded-lg shadow-lg p-6 tilt-card card-shine ripple-container timeline-dot">
                         <h3 class="text-xl font-bold text-blue-800">Business Operations Associate</h3>
                         <p class="text-gray-600 mb-2">ZS Associates • Nov 2019 - Jan 2022</p>
                         <ul class="list-disc pl-6 text-gray-700">
@@ -916,29 +1236,42 @@
         </section>
 
         <!-- Education Section -->
-        <section id="education" class="py-16 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Education</h2>
+        <section id="education" class="py-16 bg-gray-50 light-glow-container">
+            <!-- Floating Dots -->
+            <div class="floating-dots">
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+            </div>
+            <!-- Mouse Glow -->
+            <div class="light-mouse-glow" id="education-glow"></div>
+            <div class="container mx-auto px-4 relative z-10">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center animated-underline" style="display: inline-block; width: 100%;">Education</h2>
                 <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Strong foundation in engineering and technology leadership</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-blue-500 hover:shadow-lg transition-shadow">
+                    <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-blue-500 hover:shadow-lg transition-shadow tilt-card card-shine gradient-border-animated ripple-container">
                         <div class="flex items-start justify-between mb-4">
                             <div>
                                 <h3 class="text-xl font-bold text-gray-900 mb-1">Technology Leaders Program</h3>
                                 <p class="text-blue-600 font-medium">Plaksha University</p>
                             </div>
-                            <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">2022-2023</span>
+                            <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full skill-tag">2022-2023</span>
                         </div>
                         <p class="text-gray-600 text-sm">In collaboration with UC Berkeley and Purdue University</p>
                         <p class="text-gray-700 mt-2 font-medium">CGPA: 9.1/10</p>
                     </div>
-                    <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-purple-500 hover:shadow-lg transition-shadow">
+                    <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-purple-500 hover:shadow-lg transition-shadow tilt-card card-shine gradient-border-animated ripple-container">
                         <div class="flex items-start justify-between mb-4">
                             <div>
                                 <h3 class="text-xl font-bold text-gray-900 mb-1">B.Tech in Electrical Engineering</h3>
                                 <p class="text-purple-600 font-medium">Shiv Nadar University</p>
                             </div>
-                            <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">2015-2019</span>
+                            <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full skill-tag">2015-2019</span>
                         </div>
                         <p class="text-gray-600 text-sm">Minor in Physics</p>
                         <p class="text-gray-700 mt-2 font-medium">CGPA: 8.08/10</p>
@@ -1079,6 +1412,91 @@
                     });
                 });
             }
+
+            // ===== LIGHT SECTION INTERACTIVE EFFECTS =====
+
+            // 3D Tilt Effect for Cards
+            const tiltCards = document.querySelectorAll('.tilt-card');
+            tiltCards.forEach(card => {
+                card.addEventListener('mousemove', function(e) {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = (y - centerY) / 20;
+                    const rotateY = (centerX - x) / 20;
+
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                });
+
+                card.addEventListener('mouseleave', function() {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+                });
+            });
+
+            // Ripple Effect on Click
+            const rippleContainers = document.querySelectorAll('.ripple-container');
+            rippleContainers.forEach(container => {
+                container.addEventListener('click', function(e) {
+                    const rect = container.getBoundingClientRect();
+                    const ripple = document.createElement('span');
+                    const size = Math.max(rect.width, rect.height);
+
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+                    ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+                    ripple.classList.add('ripple');
+
+                    container.appendChild(ripple);
+
+                    setTimeout(() => ripple.remove(), 600);
+                });
+            });
+
+            // Mouse Glow Following for Light Sections
+            const lightGlowContainers = document.querySelectorAll('.light-glow-container');
+            lightGlowContainers.forEach(container => {
+                const glow = container.querySelector('.light-mouse-glow');
+                if (glow) {
+                    container.addEventListener('mousemove', function(e) {
+                        const rect = container.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+                        glow.style.left = x + 'px';
+                        glow.style.top = y + 'px';
+                    });
+                }
+            });
+
+            // Magnetic Button Effect
+            const magneticBtns = document.querySelectorAll('.magnetic-btn');
+            magneticBtns.forEach(btn => {
+                btn.addEventListener('mousemove', function(e) {
+                    const rect = btn.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+                });
+
+                btn.addEventListener('mouseleave', function() {
+                    btn.style.transform = 'translate(0, 0)';
+                });
+            });
+
+            // Staggered Animation for Lists
+            const staggerItems = document.querySelectorAll('.stagger-item');
+            const staggerObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, index * 100);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            staggerItems.forEach(item => staggerObserver.observe(item));
         });
 
         // Optimized wave animation with AI-themed colors
