@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     {% include head.html %}
 </head>
+
 <body class="font-sans min-h-screen">
     <!-- Skip link for accessibility -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded z-50">
+    <a href="#main-content"
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded z-50">
         Skip to main content
     </a>
 
     <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+    <!-- Global Bubbles/Sprinkles -->
+    <div class="global-sprinkles">
+        <div class="sprinkle"></div>
+        <div class="sprinkle"></div>
+        <div class="sprinkle"></div>
+        <div class="sprinkle"></div>
+        <div class="sprinkle"></div>
+        <div class="sprinkle"></div>
+        <div class="sprinkle"></div>
+        <div class="sprinkle"></div>
+        <div class="sprinkle"></div>
+        <div class="sprinkle"></div>
+    </div>
 
     {% include nav.html %}
 
@@ -21,4 +38,5 @@
 
     <script type="module" src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
+
 </html>
