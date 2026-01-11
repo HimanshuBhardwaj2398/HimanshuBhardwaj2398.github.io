@@ -14,17 +14,20 @@
     <!-- Mouse Glow -->
     <div class="light-mouse-glow" id="education-glow"></div>
     <div class="container mx-auto px-4 relative z-10">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center animated-underline" style="display: inline-block; width: 100%;">Education</h2>
-        <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Strong foundation in engineering and technology leadership</p>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center animated-underline"
+            style="display: inline-block; width: 100%;">Education</h2>
+        <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Strong foundation in engineering and technology
+            leadership</p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {% for edu in site.data.education %}
-            <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-{{ edu.color }}-500 hover:shadow-lg transition-shadow tilt-card card-shine gradient-border-animated ripple-container">
+            <div class="professional-card border-l-4 border-{{ edu.color }}-500">
                 <div class="flex items-start justify-between mb-4">
                     <div>
                         <h3 class="text-xl font-bold text-gray-900 mb-1">{{ edu.degree }}</h3>
                         <p class="text-{{ edu.color }}-600 font-medium">{{ edu.institution }}</p>
                     </div>
-                    <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full skill-tag">{{ edu.period }}</span>
+                    <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full skill-tag">{{ edu.period
+                        }}</span>
                 </div>
                 {% if edu.subtitle %}
                 <p class="text-gray-600 text-sm">{{ edu.subtitle }}</p>
