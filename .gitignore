@@ -1,12 +1,22 @@
 # Ignore bundler cache and local gem installs
 vendor/
-# Ignore other common Jekyll build outputs
+.bundle/
+
+# Ignore Jekyll build outputs
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
-# Ignore OS-specific files
+
+# Node.js
+node_modules/
+
+# OS-specific files
 .DS_Store
-# Ignore IDE/editor specific files
+
+# IDE/editor specific files
 .vscode/
 .idea/
+
+# Do NOT ignore built CSS - needed for GitHub Pages
+# assets/css/styles.css

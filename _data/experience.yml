@@ -1,0 +1,30 @@
+- title: "AI Engineer"
+  company: "Bridge Medical Consulting"
+  period: "Dec 2025 - Present"
+  responsibilities:
+    - "Developing, implementing, and deploying AI-based data extraction pipelines with automated end-to-end strategies for complex workflows used in Systematic Literature Reviews for pharmaceutical drug development and research"
+    - "Refactoring existing pipelines with enhanced tracking, observability, and data strategy to enable non-technical team members to use the platform while ensuring effective traceability and audit trails"
+
+- title: "AI & ML Consultant"
+  company: "Predli Consulting AB"
+  period: "Sept 2023 - Dec 2025"
+  responsibilities:
+    - "Architected an event-driven Azure data pipeline processing 160+ stock listings with automated web scraping, document parsing, and real-time backfilling for new firms"
+    - "Built a production-ready RAG system with optimized chunking strategies, achieving 40% improved response relevance based on client feedback"
+    - "Developed an LLM-powered Twitter bot (@KalqylAI) with sub-30-second response times to press releases, driving client engagement and revenue"
+    - "Led development of AI-driven stock analysis report generation featuring dynamic outline generation, intelligent information retrieval, and automated graph plotting"
+    - "Built agentic capabilities including template-based report generation, persona customization, and AI workflow automation"
+
+- title: "Data Science Intern"
+  company: "Predli Consulting AB"
+  period: "Apr 2023 - Jun 2023"
+  responsibilities:
+    - "Developed an end-to-end NLP pipeline for analyzing open-ended survey responses, implementing advanced clustering algorithms that improved client insight generation"
+    - "Used Huggingface transformers, UMAP, and HDBSCAN for embedding, projection, and clustering to enable data-driven strategic decisions"
+
+- title: "Business Operations Associate"
+  company: "ZS Associates"
+  period: "Nov 2019 - Jan 2022"
+  responsibilities:
+    - "Designed and implemented data-driven incentive compensation frameworks for sales teams managing $100M+ in annual revenue"
+    - "Automated weekly performance reporting systems and developed COVID-19 impact analysis dashboards, reducing manual effort by 20+ hours/week and improving decision-making speed"

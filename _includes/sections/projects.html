@@ -1,0 +1,46 @@
+<!-- Projects Section -->
+<section id="projects" class="py-16 section-dark mouse-glow-container depth-layer" style="position: relative; overflow: hidden;">
+    <!-- Floating Orbs for Projects -->
+    <div class="floating-orb orb-1" style="top: 5%; left: 80%;"></div>
+    <div class="floating-orb orb-2" style="top: 60%; left: -5%;"></div>
+    <!-- Particle Grid -->
+    <div class="particle-grid"></div>
+    <!-- Mouse Glow -->
+    <div class="mouse-glow" id="projects-glow"></div>
+    <div class="container mx-auto px-4 relative z-10">
+        <h2 class="text-3xl font-bold text-white mb-4 text-center pulse-glow">Featured Projects</h2>
+        <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">Production systems delivering real business value</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for project in site.data.projects %}
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-6 border border-slate-700 hover:border-{{ project.color }}-500/50 transition-all duration-300 hover-lift card-3d glow-border">
+                <div class="flex items-center {% if project.social_link %}justify-between{% endif %} mb-4">
+                    <div class="flex items-center">
+                        <span class="w-10 h-10 bg-{{ project.color }}-500/20 rounded-lg flex items-center justify-center mr-3 float-icon">
+                            {{ project.icon }}
+                        </span>
+                        <span class="text-xs text-{{ project.color }}-400 font-semibold uppercase tracking-wider">{{ project.category }}</span>
+                    </div>
+                    {% if project.social_link %}
+                    <a href="{{ project.social_link }}" target="_blank" rel="noopener noreferrer" class="w-8 h-8 bg-slate-700 hover:bg-{{ project.color }}-500/30 rounded-lg flex items-center justify-center transition-colors" aria-label="{{ project.social_label }}">
+                        {{ project.social_icon }}
+                    </a>
+                    {% endif %}
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">{{ project.title }}</h3>
+                <p class="text-gray-400 text-sm mb-4">{{ project.description }}</p>
+                <div class="flex flex-wrap gap-2 {% if project.link %}mb-4{% endif %}">
+                    {% for tag in project.tags %}
+                    <span class="px-2 py-1 bg-slate-700 text-gray-300 rounded text-xs">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% if project.link %}
+                <a href="{{ project.link }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-{{ project.color }}-400 hover:text-{{ project.color }}-300 text-sm font-medium">
+                    {{ project.link_text }}
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

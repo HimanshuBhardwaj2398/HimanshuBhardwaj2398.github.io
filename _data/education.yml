@@ -1,0 +1,13 @@
+- degree: "Technology Leaders Program"
+  institution: "Plaksha University"
+  period: "2022-2023"
+  color: "blue"
+  subtitle: "In collaboration with UC Berkeley and Purdue University"
+  cgpa: "9.1/10"
+
+- degree: "B.Tech in Electrical Engineering"
+  institution: "Shiv Nadar University"
+  period: "2015-2019"
+  color: "purple"
+  subtitle: "Minor in Physics"
+  cgpa: "8.08/10"

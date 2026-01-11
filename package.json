@@ -1,0 +1,16 @@
+{
+  "name": "himanshu-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio site for Himanshu Bhardwaj",
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/styles.css --minify",
+    "watch:css": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/styles.css --watch",
+    "build": "npm run build:css"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "autoprefixer": "^10.4.0"
+  },
+  "author": "Himanshu Bhardwaj",
+  "license": "MIT"
+}

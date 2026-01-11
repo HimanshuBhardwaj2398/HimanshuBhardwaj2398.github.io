@@ -1,0 +1,33 @@
+<!-- Experience Section -->
+<section id="experience" class="py-16 bg-white light-glow-container">
+    <!-- Floating Dots -->
+    <div class="floating-dots">
+        <div class="floating-dot"></div>
+        <div class="floating-dot"></div>
+        <div class="floating-dot"></div>
+        <div class="floating-dot"></div>
+        <div class="floating-dot"></div>
+        <div class="floating-dot"></div>
+        <div class="floating-dot"></div>
+        <div class="floating-dot"></div>
+    </div>
+    <!-- Mouse Glow -->
+    <div class="light-mouse-glow" id="experience-glow"></div>
+    <div class="container mx-auto px-4 relative z-10">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center animated-underline" style="display: inline-block; width: 100%;">Professional Experience</h2>
+        <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Building AI solutions across healthcare, finance, and enterprise domains</p>
+        <div class="space-y-6 pl-6 border-l-2 border-blue-200">
+            {% for exp in site.data.experience %}
+            <div class="bg-white rounded-lg shadow-lg p-6 tilt-card card-shine ripple-container timeline-dot">
+                <h3 class="text-xl font-bold text-blue-800">{{ exp.title }}</h3>
+                <p class="text-gray-600 mb-2">{{ exp.company }} • {{ exp.period }}</p>
+                <ul class="list-disc pl-6 text-gray-700">
+                    {% for item in exp.responsibilities %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

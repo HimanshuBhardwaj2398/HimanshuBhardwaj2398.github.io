@@ -1,0 +1,83 @@
+- title: "AI Data Extraction Pipeline"
+  category: "Healthcare AI"
+  color: "cyan"
+  description: "End-to-end AI pipelines for Systematic Literature Reviews in pharmaceutical research with automated document parsing and extraction."
+  tags:
+    - "LLMs"
+    - "Document AI"
+    - "Dagster"
+  icon: '<svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>'
+
+- title: "Real-time Stock Data Infrastructure"
+  category: "Financial AI Data Pipeline"
+  color: "blue"
+  description: "Designed data schemas and WebSocket-based PR release tracking for 160+ stocks. Built multi-level ingestion for PRs, attachments, and numerical table extractions powering agentic graph plotting and quarterly analytics."
+  tags:
+    - "WebSockets"
+    - "Data Schema"
+    - "ETL"
+  icon: '<svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>'
+  link: "https://www.kalqyl.se/wp-content/uploads/2025/08/EQL-Pharma-Rapportkommentar-Q1-2526.pdf"
+  link_text: "View Sample Report"
+
+- title: "LLM-Powered Twitter Bot"
+  category: "Automation"
+  color: "purple"
+  description: 'Real-time bot (<a href="https://twitter.com/KalqylAI" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300">@KalqylAI</a>) posting updates within 30 seconds of press releases for 100+ companies, driving engagement and revenue.'
+  tags:
+    - "LLMs"
+    - "APIs"
+    - "Real-time"
+  icon: '<svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>'
+  social_link: "https://twitter.com/KalqylAI"
+  social_label: "View @KalqylAI on X/Twitter"
+  social_icon: '<svg class="w-4 h-4 text-purple-400" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>'
+  link: "https://twitter.com/KalqylAI"
+  link_text: "View @KalqylAI"
+
+- title: "AI Report Generation System"
+  category: "Report Gen"
+  color: "green"
+  description: "Dynamic outline generation, intelligent retrieval, numerical extraction, and automated graph plotting for stock analysis reports."
+  tags:
+    - "Agentic AI"
+    - "NLP"
+    - "Automation"
+  icon: '<svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>'
+  social_link: "https://www.predli.com/customer-cases/spotlightgroup-kalqylai"
+  social_label: "View Case Study"
+  social_icon: '<svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>'
+  link: "https://www.predli.com/customer-cases/spotlightgroup-kalqylai"
+  link_text: "View Case Study"
+
+- title: "Enterprise RAG Platform"
+  category: "Enterprise AI"
+  color: "orange"
+  description: "File-type chunking, metadata extraction, TOC mapping for PowerPoint and document retrieval with persona customization."
+  tags:
+    - "RAG"
+    - "Vector DB"
+    - "LangChain"
+  icon: '<svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>'
+
+- title: "Survey Analytics NLP Pipeline"
+  category: "Analytics"
+  color: "pink"
+  description: "End-to-end NLP for analyzing open-ended survey responses with clustering algorithms for strategic client insights."
+  tags:
+    - "NLP"
+    - "HDBSCAN"
+    - "UMAP"
+  icon: '<svg class="w-5 h-5 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>'
+
+- title: "Meditation AI Assistant"
+  category: "Personal Project"
+  color: "teal"
+  description: "AI-powered journaling and meditation companion for mindfulness, self-reflection, and personal growth insights."
+  tags:
+    - "LLMs"
+    - "Python"
+    - "Wellness AI"
+  icon: '<svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>'
+  link: "https://github.com/HimanshuBhardwaj2398/journalling-assistant"
+  link_text: "View on GitHub"
