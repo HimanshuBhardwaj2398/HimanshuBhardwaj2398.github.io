@@ -374,6 +374,85 @@
                 text-shadow: 0 0 20px rgba(6, 182, 212, 0.5), 0 0 40px rgba(139, 92, 246, 0.3);
             }
         }
+
+        /* Mobile-specific styles */
+        @media (max-width: 767px) {
+            /* Hide decorative orbs on mobile for cleaner look */
+            .floating-orb {
+                display: none;
+            }
+
+            /* Reduce section padding on mobile */
+            section {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+
+            /* Smaller hero text on mobile */
+            .text-3d {
+                text-shadow:
+                    0 1px 0 rgba(6, 182, 212, 0.3),
+                    0 2px 8px rgba(6, 182, 212, 0.2);
+            }
+
+            /* Mobile menu animation */
+            #mobile-menu {
+                animation: slideDown 0.2s ease-out;
+            }
+
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Improve touch targets */
+            .mobile-nav-link {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+            }
+
+            /* Stack hero social links on very small screens */
+            .flex.justify-center.space-x-6 {
+                flex-wrap: wrap;
+                gap: 0.75rem;
+            }
+
+            /* Reduce card padding on mobile */
+            .card-3d {
+                padding: 1rem;
+            }
+
+            /* Improve list readability on mobile */
+            ul.list-disc {
+                padding-left: 1.25rem;
+            }
+
+            ul.list-disc li {
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 380px) {
+            .logo {
+                font-size: 1.25rem;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -386,16 +465,34 @@
 
     <!-- Navigation -->
     <nav class="sticky top-0 z-50" role="navigation" aria-label="Main navigation">
-        <div class="container mx-auto px-6 py-4">
+        <div class="container mx-auto px-4 md:px-6 py-4">
             <div class="flex justify-between items-center">
                 <div class="logo">HB</div>
-                <div class="flex space-x-1">
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-1">
                     <a href="#about">About</a>
                     <a href="#skills">Skills</a>
                     <a href="#projects">Projects</a>
                     <a href="#experience">Experience</a>
                     <a href="#education">Education</a>
                     <a href="#contact">Contact</a>
+                </div>
+                <!-- Mobile Hamburger Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Toggle menu" aria-expanded="false">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200">
+                <div class="flex flex-col space-y-2 pt-4">
+                    <a href="#about" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-gray-100">About</a>
+                    <a href="#skills" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-gray-100">Skills</a>
+                    <a href="#projects" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-gray-100">Projects</a>
+                    <a href="#experience" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-gray-100">Experience</a>
+                    <a href="#education" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-gray-100">Education</a>
+                    <a href="#contact" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-gray-100">Contact</a>
                 </div>
             </div>
         </div>
@@ -953,6 +1050,35 @@
                     }
                 });
             });
+
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    const isOpen = !mobileMenu.classList.contains('hidden');
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenuBtn.setAttribute('aria-expanded', !isOpen);
+
+                    // Toggle hamburger to X icon
+                    if (isOpen) {
+                        hamburgerIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+                    } else {
+                        hamburgerIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+                    }
+                });
+
+                // Close mobile menu when clicking a link
+                document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                        hamburgerIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+                    });
+                });
+            }
         });
 
         // Optimized wave animation with AI-themed colors
