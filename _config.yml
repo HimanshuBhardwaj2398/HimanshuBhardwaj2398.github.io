@@ -20,16 +20,18 @@ social:
 
 # Navigation
 navigation:
-  - title: Home
-    url: "/"
+  - title: About
+    url: "#about"
+  - title: Skills
+    url: "#skills"
   - title: Projects
-    url: "/projects.html"
+    url: "#projects"
   - title: Experience
-    url: "/experience.html"
-  - title: CV
-    url: "/cv.html"
+    url: "#experience"
+  - title: Education
+    url: "#education"
   - title: Contact
-    url: "/contact.html"
+    url: "#contact"
 
 # Build settings
 markdown: kramdown
