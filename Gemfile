@@ -1,5 +1,4 @@
 source "https://rubygems.org"
 
-gem "github-pages", "~> 232"
-gem "jekyll-feed"
-gem "jekyll-seo-tag"
+gem "github-pages", group: :jekyll_plugins
+gem "webrick", "~> 1.8"
