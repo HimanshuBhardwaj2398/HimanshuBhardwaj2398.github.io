@@ -1,12 +1,15 @@
-// Simple JavaScript for mobile menu toggle
+// Simple JavaScript for mobile menu toggle and smooth scrolling
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    if (mobileMenuToggle && mobileMenu) {
-        mobileMenuToggle.addEventListener('click', function() {
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
             mobileMenu.classList.toggle('hidden');
+            // Update aria-expanded for accessibility
+            const isExpanded = !mobileMenu.classList.contains('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', isExpanded);
         });
 
         // Close mobile menu when clicking on a link
@@ -14,20 +17,53 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileLinks.forEach(link => {
             link.addEventListener('click', function() {
                 mobileMenu.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
             });
         });
     }
 
-    // Highlight active page in sidebar
-    const currentPath = window.location.pathname;
-    const sidebarLinks = document.querySelectorAll('aside a, #mobile-menu a');
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
 
-    sidebarLinks.forEach(link => {
-        const linkPath = new URL(link.href).pathname;
-        if (currentPath === linkPath ||
-            (currentPath === '/' && linkPath === '/') ||
-            (currentPath.includes(linkPath) && linkPath !== '/')) {
-            link.classList.add('sidebar-link', 'active');
-        }
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Update URL hash without jumping
+                history.pushState(null, null, targetId);
+            }
+        });
     });
+
+    // Highlight active section in navigation
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+    function highlightActiveSection() {
+        const scrollPos = window.scrollY + 100;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('text-blue-600', 'font-semibold');
+                    if (link.getAttribute('href') === '#' + sectionId) {
+                        link.classList.add('text-blue-600', 'font-semibold');
+                    }
+                });
+            }
+        });
+    }
+
+    window.addEventListener('scroll', highlightActiveSection);
+    highlightActiveSection(); // Run on page load
 });
